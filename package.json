@@ -1,0 +1,16 @@
+{
+  "name": "@jameswomack/npm-config-example",
+  "scripts": {
+    "test": "$npm_package_config_dblocal mocha ./src/*.test.js",
+    "start-server": "node ./src/index.js",
+    "start:local": "$npm_package_config_dblocal npm run start-server",
+    "start:prod": "$npm_package_config_dbprod npm run start-server"
+  },
+  "config": {
+    "dbprod": "env MONGO_HOST=https://fu.manchu DB_NAME=1337;",
+    "dblocal": "env MONGO_HOST=localhost DB_NAME=local;"
+  },
+  "devDependencies": {
+    "mocha": "8.1.3"
+  }
+}
